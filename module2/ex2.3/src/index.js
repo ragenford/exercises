@@ -40,6 +40,7 @@ const form = document.querySelector('form'); // pour acceder au form
 form.addEventListener('submit', (e) => { // j ecoute le submit
    e.preventDefault();
    const nbLignes = document.getElementById("nbLignes").value; // je vais chercher mes valeurs
+   console.log(nbLignes);
    const nbCol = document.getElementById("nbCol").value;
    const text = document.getElementById("text").value;
    
