@@ -1,7 +1,7 @@
 import 'bootstrap/dist/css/bootstrap.min.css';
 import './stylesheets/main.css';
 import 'animate.css';
-import HomePage from './Components/Pages/HomePage';
+
 import Header from './Components/Header/Header';
 import Footer from './Components/Footer/Footer';
 import Navbar from './Components/Navbar/Navbar';
@@ -12,8 +12,6 @@ Header(); // faire appel au header avant la navbar sinon car le header initialis
 Navbar();
 
 Router();
-
-HomePage();
 
 Footer();
 

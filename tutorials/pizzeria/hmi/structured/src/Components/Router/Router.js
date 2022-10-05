@@ -9,7 +9,9 @@ const routes = {
 };
 
 const Router = () => {
+  onFrontendLoad();
   onNavBarClick();
+  onHistoryChange();
 };
 
 function onNavBarClick() {
@@ -25,6 +27,24 @@ function onNavBarClick() {
       componentToRender();
       window.history.pushState({}, '', uri); // pour mettre la page dans l'historique
     });
+  });
+}
+
+function onHistoryChange() {
+  window.addEventListener('popstate', () => {
+    const uri = window.location.pathname;
+    const componentToRender = routes[uri];
+    componentToRender();
+  });
+}
+
+function onFrontendLoad() {
+  window.addEventListener('load', () => {
+    const uri = window.location.pathname;
+    const componentToRender = routes[uri];
+    if (!componentToRender) throw Error(`The ${uri} ressource does not exist.`);
+
+    componentToRender();
   });
 }
 
