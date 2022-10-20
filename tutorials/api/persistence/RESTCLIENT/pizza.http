@@ -1,0 +1,36 @@
+@baseUrl = http://localhost:3000
+
+### Read all pizzas
+GET http://localhost:3000/pizza/
+
+### Read all pizzas with File variable
+GET {{baseUrl}}/pizzas
+
+### Create a pizza
+POST {{baseUrl}}/pizzas
+Content-Type: application/json
+
+{
+    "title":"Magic Green",
+    "content":"Epinards, Brocolis, Olives vertes, Basilic"
+}
+
+### Read all pizzas sorted by title (ascending)
+GET {{baseUrl}}/pizzas/?order=+title
+
+### Read all pizzas sorted by title (descending)
+GET {{baseUrl}}/pizzas/?order=-title
+
+### Delete pizza identified by 2
+DELETE {{baseUrl}}/pizzas/2
+
+### Update the pizza identified by 6
+PATCH {{baseUrl}}/pizzas/6
+Content-Type: application/json
+
+{
+    "title":"Magic Green 2"
+}
+
+
+
